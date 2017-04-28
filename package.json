@@ -1,0 +1,42 @@
+{
+  "name": "git-pull-or-clone",
+  "description": "Ensure a git repo exists on disk and that it's up-to-date",
+  "version": "0.0.0",
+  "author": {
+    "name": "Feross Aboukhadijeh",
+    "email": "feross@feross.org",
+    "url": "http://feross.org/"
+  },
+  "bugs": {
+    "url": "https://github.com/feross/git-pull-or-clone/issues"
+  },
+  "dependencies": {
+    "cross-spawn": "^5.1.0",
+    "debug": "^2.6.6"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.1",
+    "standard": "*",
+    "tape": "^4.6.3"
+  },
+  "keywords": [
+    "clone",
+    "git",
+    "git clone",
+    "git pull",
+    "git pull or clone",
+    "git sync",
+    "pull",
+    "pull or clone",
+    "sync"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/feross/git-pull-or-clone.git"
+  },
+  "scripts": {
+    "test": "standard && DEBUG=git-pull-or-clone tape test/*.js"
+  }
+}
