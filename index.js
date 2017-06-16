@@ -15,6 +15,7 @@ function gitPullOrClone (url, outPath, cb) {
 
   function gitClone () {
     const args = [ 'clone', '--depth', 1, url, outPath ]
+    debug('git ' + args.join(' '))
     spawn('git', args, {}, function (err) {
       if (err) err.message += ' (git clone) (' + url + ')'
       cb(err)
@@ -23,6 +24,7 @@ function gitPullOrClone (url, outPath, cb) {
 
   function gitPull () {
     const args = [ 'pull', '--depth', 1 ]
+    debug('git ' + args.join(' '))
     spawn('git', args, { cwd: outPath }, function (err) {
       if (err) err.message += ' (git pull) (' + url + ')'
       cb(err)
