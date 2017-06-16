@@ -22,7 +22,7 @@ function gitPullOrClone (url, outPath, cb) {
   }
 
   function gitPull () {
-    const args = [ 'pull' ]
+    const args = [ 'pull', '--depth', 1 ]
     spawn('git', args, { cwd: outPath }, function (err) {
       if (err) err.message += ' (git pull) (' + url + ')'
       cb(err)
