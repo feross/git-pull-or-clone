@@ -11,8 +11,8 @@
     "url": "https://github.com/feross/git-pull-or-clone/issues"
   },
   "dependencies": {
-    "cross-spawn": "^5.1.0",
-    "debug": "^2.6.6"
+    "cross-spawn": "^6.0.4",
+    "debug": "^3.1.0"
   },
   "devDependencies": {
     "rimraf": "^2.6.1",
