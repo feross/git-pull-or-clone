@@ -1,7 +1,5 @@
 # git-pull-or-clone [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url]
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/feross/git-pull-or-clone.svg)](https://greenkeeper.io/)
-
 [travis-image]: https://img.shields.io/travis/feross/git-pull-or-clone/master.svg
 [travis-url]: https://travis-ci.org/feross/git-pull-or-clone
 [npm-image]: https://img.shields.io/npm/v/git-pull-or-clone.svg
