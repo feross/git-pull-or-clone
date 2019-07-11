@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "rimraf": "^2.6.1",
-    "standard": "*",
+    "standard": ">=13.0.1",
     "tape": "^4.6.3"
   },
   "keywords": [
