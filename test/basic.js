@@ -4,7 +4,7 @@ const rimraf = require('rimraf')
 const test = require('tape')
 
 const TMP_PATH = path.join(__dirname, '..', 'tmp')
-const OUT_PATH = path.join(TMP_PATH, 'standard')
+const OUT_PATH = path.join(TMP_PATH, 'git-pull-or-clone')
 const REPO_URL = 'https://github.com/feross/git-pull-or-clone.git'
 
 test('remove tmp folder', (t) => {
@@ -22,6 +22,13 @@ test('git clone', (t) => {
 test('git pull', (t) => {
   t.plan(1)
   gitPullOrClone(REPO_URL, OUT_PATH, (err) => {
+    t.error(err)
+  })
+})
+
+test('git pull without depth limit', (t) => {
+  t.plan(1)
+  gitPullOrClone(REPO_URL, OUT_PATH, { depth: -1 }, (err) => {
     t.error(err)
   })
 })
