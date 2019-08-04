@@ -12,6 +12,10 @@ function gitPullOrClone (url, outPath, opts, cb) {
 
   const depth = opts.depth == null ? 1 : opts.depth
 
+  if (depth <= 0) {
+    throw new RangeError('The "depth" option must be greater than 0')
+  }
+
   fs.access(outPath, fs.R_OK | fs.W_OK, function (err) {
     if (err) {
       gitClone()

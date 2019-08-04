@@ -2,6 +2,7 @@ const gitPullOrClone = require('../')
 const path = require('path')
 const rimraf = require('rimraf')
 const test = require('tape')
+const noop = () => {}
 
 const TMP_PATH = path.join(__dirname, '..', 'tmp')
 const OUT_PATH = path.join(TMP_PATH, 'git-pull-or-clone')
@@ -31,4 +32,12 @@ test('git pull without depth limit', (t) => {
   gitPullOrClone(REPO_URL, OUT_PATH, { depth: Infinity }, (err) => {
     t.error(err)
   })
+})
+
+test('git pull with invalid depth', (t) => {
+  t.plan(1)
+  t.throws(
+    () => gitPullOrClone(REPO_URL, OUT_PATH, { depth: 0 }, noop),
+    /The "depth" option must be greater than 0/
+  )
 })
