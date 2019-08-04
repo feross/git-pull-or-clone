@@ -28,7 +28,7 @@ test('git pull', (t) => {
 
 test('git pull without depth limit', (t) => {
   t.plan(1)
-  gitPullOrClone(REPO_URL, OUT_PATH, { depth: -1 }, (err) => {
+  gitPullOrClone(REPO_URL, OUT_PATH, { depth: Infinity }, (err) => {
     t.error(err)
   })
 })

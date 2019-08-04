@@ -22,7 +22,7 @@ function gitPullOrClone (url, outPath, opts, cb) {
 
   function gitClone () {
     // --depth implies --single-branch
-    const flag = depth > 0 ? '--depth=' + depth : '--single-branch'
+    const flag = depth < Infinity ? '--depth=' + depth : '--single-branch'
     const args = ['clone', flag, url, outPath]
     debug('git ' + args.join(' '))
     spawn('git', args, {}, function (err) {
@@ -32,7 +32,7 @@ function gitPullOrClone (url, outPath, opts, cb) {
   }
 
   function gitPull () {
-    const args = depth > 0 ? ['pull', '--depth=' + depth] : ['pull']
+    const args = depth < Infinity ? ['pull', '--depth=' + depth] : ['pull']
     debug('git ' + args.join(' '))
     spawn('git', args, { cwd: outPath }, function (err) {
       if (err) err.message += ' (git pull) (' + url + ')'

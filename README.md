@@ -35,7 +35,7 @@ Ensure a git repo exists on disk and that it's up-to-date.
 Clones the git repo specified by `url` to the path `outPath`. If the repo already exists on disk,
 then a pull is performed to update the repo instead.
 
-The git repo is shallowly cloned by default. To make a complete clone, set `options.depth` to `-1`. If the git repo was previously cloned shallowly, it remains shallow.
+The git repo is shallowly cloned by default. To make a complete clone, set `options.depth` to `Infinity`. If the git repo was previously cloned shallowly, it remains shallow.
 
 When the operation is finished, `callback` is called. The first argument to `callback` is either
 `null` or an `Error` object if an error occurred.
