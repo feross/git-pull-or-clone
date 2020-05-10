@@ -1,3 +1,4 @@
+/*! git-pull-or-clone. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
 module.exports = gitPullOrClone
 
 const crossSpawn = require('cross-spawn')
