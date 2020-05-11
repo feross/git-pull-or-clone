@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "rimraf": "^3.0.0",
-    "standard": "*",
+    "standard": ">=14.3.4",
     "tape": "^5.0.0"
   },
   "engines": {
