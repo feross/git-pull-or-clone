@@ -57,3 +57,20 @@ function spawn (command, args, opts, cb) {
   })
   return child
 }
+
+gitPullOrClone.async = function(url, outPath, opts) {
+  return new Promise(
+    (resolve, reject) =>
+      gitPullOrClone(
+        url,
+        outPath,
+        opts || {},
+        err => {
+          if (!err) {
+            resolve()
+          }
+          reject(err)
+        }
+      )
+  )
+}
