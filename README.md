@@ -40,6 +40,10 @@ The git repo is shallowly cloned by default. To make a complete clone, set `opti
 When the operation is finished, `callback` is called. The first argument to `callback` is either
 `null` or an `Error` object if an error occurred.
 
+### `gitPullOrClone.async(url, outPath[, options])`
+
+Work as same as `gitPullOrClone(url, outPath[, options], callback)` but handle callback as async function
+
 ## License
 
 MIT. Copyright (c) [Feross Aboukhadijeh](http://feross.org).
