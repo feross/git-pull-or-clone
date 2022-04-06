@@ -1,7 +1,7 @@
-# git-pull-or-clone [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url]
+# git-pull-or-clone [![ci][ci-image]][ci-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url]
 
-[travis-image]: https://img.shields.io/travis/feross/git-pull-or-clone/master.svg
-[travis-url]: https://travis-ci.org/feross/git-pull-or-clone
+[ci-image]: https://img.shields.io/github/workflow/status/feross/git-pull-or-clone/ci/master
+[ci-url]: https://github.com/feross/git-pull-or-clone/actions
 [npm-image]: https://img.shields.io/npm/v/git-pull-or-clone.svg
 [npm-url]: https://npmjs.org/package/git-pull-or-clone
 [downloads-image]: https://img.shields.io/npm/dm/git-pull-or-clone.svg
