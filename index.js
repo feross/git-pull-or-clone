@@ -28,7 +28,7 @@ function gitPullOrClone (url, outPath, opts, cb) {
   function gitClone () {
     // --depth implies --single-branch
     const flag = depth < Infinity ? '--depth=' + depth : '--single-branch'
-    const args = ['clone', flag, url, outPath]
+    const args = ['clone', flag, '--', url, outPath]
     debug('git ' + args.join(' '))
     spawn('git', args, {}, function (err) {
       if (err) err.message += ' (git clone) (' + url + ')'
