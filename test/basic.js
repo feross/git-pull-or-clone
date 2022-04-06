@@ -57,14 +57,12 @@ test('git clone shouldnt allow command injection, via attack vector one', (t) =>
   const REPO_LOCAL_PATH = `file://${OUT_PATH}`
   const OUT_PATH_INJECTION = `--upload-pack=touch ${OUT_TEST_FILE}`
 
-  console.log(REPO_LOCAL_PATH)
-
   gitPullOrClone(REPO_LOCAL_PATH, OUT_PATH_INJECTION, () => {
     const exploitSucceeded = !!fs.existsSync(OUT_TEST_FILE)
-    t.error(exploitSucceeded, `${OUT_TEST_FILE} should not exist, potential security vulnerability detected`)
+    t.notOk(exploitSucceeded, `${OUT_TEST_FILE} should not exist, potential security vulnerability detected`)
 
     // cleanup the command injection test data
-    exploitSucceeded && rimraf.sync(OUT_TEST_FILE)
+    if (exploitSucceeded) rimraf.sync(OUT_TEST_FILE)
   })
 })
 
@@ -82,13 +80,11 @@ test('git clone shouldnt allow command injection, via attack vector two', (t) =>
   const OUT_PATH_INJECTION = `file://${OUT_PATH}`
   const REPO_LOCAL_PATH = `--upload-pack=touch ${OUT_TEST_FILE}`
 
-  console.log(REPO_LOCAL_PATH)
-
   gitPullOrClone(REPO_LOCAL_PATH, OUT_PATH_INJECTION, () => {
     const exploitSucceeded = !!fs.existsSync(OUT_TEST_FILE)
-    t.error(exploitSucceeded, `${OUT_TEST_FILE} should not exist, potential security vulnerability detected`)
+    t.notOk(exploitSucceeded, `${OUT_TEST_FILE} should not exist, potential security vulnerability detected`)
 
     // cleanup the command injection test data
-    exploitSucceeded && rimraf.sync(OUT_TEST_FILE)
+    if (exploitSucceeded) rimraf.sync(OUT_TEST_FILE)
   })
 })
