@@ -15,7 +15,7 @@
     "debug": "^4.1.1"
   },
   "devDependencies": {
-    "rimraf": "^3.0.0",
+    "rimraf": "^4.1.2",
     "standard": "*",
     "tape": "^5.0.0"
   },
